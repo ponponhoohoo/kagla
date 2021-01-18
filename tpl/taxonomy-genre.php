@@ -1,7 +1,5 @@
 <?php get_template_part('second_header'); ?>
 
-
-
 <div class="second__main">
     <div class="outer">
       <h2 class="sub_ttl"><span>製作事例一覧</span></h2>
