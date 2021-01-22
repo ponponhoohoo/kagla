@@ -45,11 +45,191 @@
 
 		</div>
 		<nav class="sp_none">
-			<ul class="yumincho">
-				<li><a href="<?php bloginfo('url'); ?>/">事業内容</a></li>
-				<li><a href="<?php bloginfo('url'); ?>/">アフターサービス</a></li>
-				<li><a href="<?php bloginfo('url'); ?>/">カグラ知恵袋</a></li>
-				<li><a href="<?php bloginfo('url'); ?>/">会社情報</a></li>
+			<ul class="yumincho" id="pc_nav">
+				<li>
+					<a href="<?php bloginfo('url'); ?>/" class="child">事業内容</a>
+					<div class="pc_dropdown">
+						<div class="business">
+							<div class="group w60">
+								<div class="inner">
+									<div class="box">
+										<p class="cat_ttl">ガス機器事業</p>
+										<p class="nav__ttl">LPGベーパライザー</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">アスリート</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">セイビースト</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ミニマム</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ペーパーウルトラ</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ペーパーブルー</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ペーパーゴールドミキサー</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ペーパーミキサー</a></dt>
+										</dl>
+										<p class="nav__ttl">LNGベーパライザー</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">ナチュライザイー</a></dt>
+										</dl>
+										<p class="nav__ttl">アンモニアベーパライザー</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">アンモニアベーパライザー</a></dt>
+										</dl>
+									</div>
+									<div class="box">
+										<p class="nav__ttl">ベーパライザーユニット</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">バイオ</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">e-バイオ</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">バルクユンポ</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ラージユンポ</a></dt>
+										</dl>
+										<p class="nav__ttl">簡易スタンド</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">オートコンポ</a></dt>
+										</dl>
+										<p class="nav__ttl">カクシュバルブ</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">LR</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">バラフロー</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">ピュアフロー</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">KRシリーズ</a></dt>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div class="group w20">
+								<p class="cat_ttl">ガスプラント事業</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">設計/施行</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">定期自主検査/開放検査</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">指定保安検査</a></dt>
+								</dl>
+								<p class="cat_ttl"><a href="<?php bloginfo('url'); ?>/">非常用事業</a></p>
+								<p class="cat_ttl">災害対策事業</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">非常用タンク</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">浄水器</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">貯蔵庫</a></dt>
+								</dl>
+							</div>
+							<div class="group w20">
+								<p class="cat_ttl">感染対策事業</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">設計/施行</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">定期自主検査/開放検査</a></dt>
+								</dl>
+								<p class="cat_ttl"><a href="<?php bloginfo('url'); ?>/">海外事業</a></p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="<?php bloginfo('url'); ?>/" class="child">アフターサービス</a>
+					<div class="pc_dropdown">
+						<div class="service">
+							<div class="group w70">
+								<p class="cat_ttl">機器</p>
+								<div class="inner">
+									<div class="box">
+										<img src="<?php bloginfo('template_url'); ?>/img/thum-1.jpg" alt="">
+									</div>
+									<div class="box">
+										<p class="nav__ttl">メンテナンス</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">メンテナンスの必要性</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">日常点検</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">定期点検</a></dt>
+										</dl>
+									</div>
+									<div class="box">
+										<p class="nav__ttl">トラブルシューティング</p>
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">よくある質問</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">生産終了</a></dt>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div class="group w20">
+								<p class="cat_ttl">プラント</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">設計/施行</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">定期自主検査/開放検査</a></dt>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="<?php bloginfo('url'); ?>/" class="child">カグラ知恵袋</a>
+					<div class="pc_dropdown">
+						<div class="company">
+							<div class="group">
+								<p class="cat_ttl">いまさら聞けない</p>
+								<div class="half__column">
+									<div class="box">
+										<img src="<?php bloginfo('template_url'); ?>/img/thum-1.jpg" alt="">
+										<p>代表挨拶</p>
+									</div>
+									<div class="box">
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">企業理念</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">カグラのものづくり</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">コーポレートブランド</a></dt>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div class="group">
+								<p class="nav__ttl">技術情報</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">技術情報</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">寸法表</a></dt>
+								</dl>
+							</div>
+							<div class="group">
+								<p class="nav__ttl">補助金</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">補助金</a></dt>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="<?php bloginfo('url'); ?>/" class="child">会社情報</a>
+					<div class="pc_dropdown">
+						<div class="company">
+							<div class="group">
+								<p class="cat_ttl">カグラの想い</p>
+								<div class="half__column">
+									<div class="box">
+										<img src="<?php bloginfo('template_url'); ?>/img/thum-1.jpg" alt="">
+										<p>代表挨拶</p>
+									</div>
+									<div class="box">
+										<dl>
+											<dt><a href="<?php bloginfo('url'); ?>/">企業理念</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">カグラのものづくり</a></dt>
+											<dt><a href="<?php bloginfo('url'); ?>/">コーポレートブランド</a></dt>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div class="group">
+								<p class="nav__ttl">技術情報</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">技術情報</a></dt>
+									<dt><a href="<?php bloginfo('url'); ?>/">寸法表</a></dt>
+								</dl>
+							</div>
+							<div class="group">
+								<p class="nav__ttl">補助金</p>
+								<dl>
+									<dt><a href="<?php bloginfo('url'); ?>/">補助金</a></dt>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</li>
 				<li><a href="<?php bloginfo('url'); ?>/">SDGs</a></li>
 				<li><a href="<?php bloginfo('url'); ?>/">求人情報</a></li>
 			</ul>

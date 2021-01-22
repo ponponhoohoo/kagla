@@ -2744,8 +2744,14 @@ footer {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+			&:after {
+				display: block;
+				content:"";
+				width:30%;
+			}
+
 			li {
-				width:23%;
+				width:30%;
 				background: #f7f7f7;
 				border-radius: 10px;
 				box-sizing: border-box;

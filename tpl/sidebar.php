@@ -9,7 +9,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php bloginfo('url'); ?>/">
+          <a href="<?php bloginfo('url'); ?>/download-list">
             <img src="<?php bloginfo('template_url'); ?>/img/icon-2.png" alt="">
             <p>カタログ</p>
           </a>
@@ -20,12 +20,22 @@
             <p>検索</p>
           </a>
         </li>
-        <li>
-          <a href="<?php bloginfo('url'); ?>/">
+        <?php if( is_user_logged_in() ) : ?>
+          <li> <?php wp_logout_url(); ?>
+          <a href="<?php bloginfo('url'); ?>/wp-login.php?action=logout">
+            <img src="<?php bloginfo('template_url'); ?>/img/icon-4.png" alt="">
+            <p>ログアウト</p>
+          </a>
+        </li>
+        <?php else : ?>
+          <li> 
+          <a href="<?php bloginfo('url'); ?>/login">
             <img src="<?php bloginfo('template_url'); ?>/img/icon-4.png" alt="">
             <p>ログイン</p>
           </a>
         </li>
+          
+        <?php endif; ?>
       </ul>
     </nav>
     <div class="outer sp_none">

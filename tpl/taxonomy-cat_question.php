@@ -37,7 +37,7 @@
         <div class="second">
           <div class="after_service">
             <div class="wrapper faq">
-              <ul class="icon_nav mb_60">
+<!--               <ul class="icon_nav mb_60">
               <?php
                 $taxonomy_name = 'cat_question';
                 $taxonomys = get_terms($taxonomy_name);
@@ -67,7 +67,7 @@
                     endforeach;
                 endif;
               ?>
-              </ul>
+              </ul> -->
 
               <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

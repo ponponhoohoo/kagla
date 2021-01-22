@@ -43,81 +43,98 @@
 				<div class="second">
 					<div class="after_service">
 						<div class="wrapper faq">
-							<ul class="icon_nav mb_60">
+							
 							<?php
-								$taxonomy_name = 'cat_question';
-								$taxonomys = get_terms($taxonomy_name);
+							$taxonomy_name = 'cat_question';
+							$taxonomys = get_terms($taxonomy_name);
 
-								if(!empty($taxonomys) && count($taxonomys)):
-								    foreach($taxonomys as $taxonomy):
-								        $term_id = esc_html($taxonomy->term_id);
-								        $term_idsp = "cat_question_".$term_id; //カスタムフィールドを取得するのに必要なtermのIDは「taxonomyname_ + termID」
-								        $photo = get_field('画像',$term_idsp);
-								        $photosp = wp_get_attachment_image_src($photo, 'full');
-								        $url = get_term_link($taxonomy->slug, 'cat_question');
-								?>
-								<li>
+							if(!empty($taxonomys) && count($taxonomys)):
+								foreach($taxonomys as $taxonomy):
+									if ($taxonomy->parent == 0) {
+										$p_term_id = esc_html($taxonomy->term_id);
+										echo '<h2 class="middle_ttl">' . $taxonomy->name . '</h2>';
+										echo '<ul class="icon_nav mb_60">';
+										$termchildren = get_term_children( $p_term_id, $taxonomy_name);
+
+										foreach ($termchildren as $childtern) {
+											$term = get_term_by( 'id', $childtern, $taxonomy_name );
+											$targetSlug = $term->slug;
+											$term_id = esc_html($term->term_id);
+										        $term_idsp = "cat_question_".$term_id; //カスタムフィールドを取得するのに必要なtermのIDは「taxonomyname_ + termID」
+										        $photo = get_field('画像',$term_idsp);
+										        $photosp = wp_get_attachment_image_src($photo, 'full');
+										        $url = get_term_link($taxonomy->slug, 'cat_question');
+
+										        ?>
+										        <li>
+										        	
+										        	<a href="<?php echo $url; ?>">
+										        		<?php $image = get_field('画像', $term); 
+
+										        		if( !empty($photo) ): ?>
+										        			<img src="<?php echo $photo; ?>" alt="<?php echo $image['alt']; ?>" />
+										        			<?php else: ?>
+										        				<img src="<?php echo get_template_directory_uri(); ?>/img/pic_dammy.jpg" alt="">
+										        			<?php endif; ?>
+										        			<p class="sub_ttl"><?php echo esc_html($term->name); ?></p>
+										        			<p><?php echo esc_html($term->description ); ?></p>
+										        		</a>
+										        	</li>
+										        	<?php
+										        }
+										        echo '</ul>';
+										    }
+										    ?>
+										    
+										    <?php
+										endforeach;
+									endif;
+									?>
 									
-								 	<a href="<?php echo $url; ?>">
-								 	<?php $image = get_field('画像', $term); 
 
-								 	if( !empty($photo) ): ?>
-									<img src="<?php echo $photo; ?>" alt="<?php echo $image['alt']; ?>" />
-									<?php else: ?>
-									<img src="<?php echo get_template_directory_uri(); ?>/img/pic_dammy.jpg" alt="">
-									<?php endif; ?>
-								 	<p class="sub_ttl"><?php echo esc_html($taxonomy->name); ?></p>
-									<p><?php echo esc_html($taxonomy->description ); ?></p>
-								</li>
-								<?php
-								    endforeach;
-								endif;
-							?>
-							</ul>
-
-							<?php
-							$terms = get_terms( 'cat_question' );
-							foreach ( $terms as $term ) :
-							    $args = array(
-							        'post_type' => 'question',
-							        'taxonomy' => 'cat_question',
-							        'term' => $term->slug,
-							        'posts_per_page' => -1,
-							        'no_found_rows' => true,
-							    );
-							    $query = new WP_Query($args); ?>
-							    <section class="mb_40 faq_area">
-							    <h3 class="middle_ttl"><?php echo esc_html( $term->name ); ?></h3>
-							    <ul class="accordion">
-							    <?php if ( $query->have_posts() ) : ?>
-							        <?php while ( $query->have_posts() ) : $query->the_post();?>
-							            <li>
-							            	<div class="faq_ttl"><?php the_title(); ?>
-												<p class="icon">
-													<span></span>
-													<span></span>
-												</p>
-											</div>
-											<p class="lead">
-												<?php remove_filter ('the_content', 'wpautop'); ?>
-												<?php the_content(); ?>
-											</p>
-							            </li>
-							        <?php endwhile;?>
-							        <?php wp_reset_postdata(); ?>
-							    <?php endif; ?>
-							    </ul>
-							   </section>
-							<?php endforeach; ?>
+									<?php
+									$terms = get_terms( 'cat_question' );
+									foreach ( $terms as $term ) :
+										$args = array(
+											'post_type' => 'question',
+											'taxonomy' => 'cat_question',
+											'term' => $term->slug,
+											'posts_per_page' => 5,
+											'no_found_rows' => true,
+										);
+										$query = new WP_Query($args); ?>
+										<section class="mb_40 faq_area">
+											<h3 class="middle_ttl"><?php echo esc_html( $term->name ); ?></h3>
+											<ul class="accordion">
+												<?php if ( $query->have_posts() ) : ?>
+													<?php while ( $query->have_posts() ) : $query->the_post();?>
+														<li>
+															<div class="faq_ttl"><?php the_title(); ?>
+															<p class="icon">
+																<span></span>
+																<span></span>
+															</p>
+														</div>
+														<p class="lead">
+															<?php remove_filter ('the_content', 'wpautop'); ?>
+															<?php the_content(); ?>
+														</p>
+													</li>
+												<?php endwhile;?>
+												<?php wp_reset_postdata(); ?>
+											<?php endif; ?>
+										</ul>
+									</section>
+								<?php endforeach; ?>
+							</div>
 						</div>
 					</div>
-				</div>
-			</main>
-			<!-- main -->
+				</main>
+				<!-- main -->
+			</div>
 		</div>
+
 	</div>
 
-</div>
 
-
-<?php get_footer(); ?>
+	<?php get_footer(); ?>

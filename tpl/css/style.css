@@ -3020,8 +3020,14 @@ footer .copy {
   justify-content: space-between;
 }
 
+.after_service .faq .icon_nav:after {
+  display: block;
+  content: "";
+  width: 30%;
+}
+
 .after_service .faq .icon_nav li {
-  width: 23%;
+  width: 30%;
   background: #f7f7f7;
   border-radius: 10px;
   box-sizing: border-box;

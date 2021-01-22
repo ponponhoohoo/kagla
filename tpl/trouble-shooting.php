@@ -32,6 +32,7 @@
 								<section class="box">
 									<form role="search" method="get" id="searchform" action="<?php echo home_url(); ?>" >
 										<input type="hidden" name="s" id="s" class="hiden" priceholder="検索" />
+										<input type="hidden" name="post_type" value="qa">
 										<div class="outer">
 
 											<?php

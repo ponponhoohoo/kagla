@@ -14,7 +14,7 @@
 			<div class="second_main_img business__bg fadeIn wow" data-wow-duration="1.0s">
 				<div class="outer">
 					<h2 class="sub_ttl fadeInUp wow" data-wow-duration="1.0s" data-wow-delay="1">
-						トラブルシューティング
+						ログイン
 					</h2>
 					<p class="fadeInUp wow" data-wow-duration="1s" data-wow-delay="1.8">
 						ここでは、当社製品の利用時に発生する可能性のある問題の解決手順についてご説明致します。
@@ -38,22 +38,20 @@
 					</ul>
 
 					<section class="download">
-
-
 						<?php if(have_posts()): while(have_posts()):the_post(); ?>
 						<?php remove_filter('the_content', 'wpautop'); ?>
 					  	<?php the_content(); ?>
 						<?php endwhile; endif; ?>
 
 						<p class="center mb_40">
-							<a href="<?php bloginfo('url'); ?>//wp-login.php?action=lostpassword">パスワードをお忘れですか？</a>
+							<a href="<?php bloginfo('url'); ?>/wp-login.php?action=lostpassword">パスワードをお忘れですか？</a>
 						</p>
 
 						<div class="register">
 							<p class="center">
 								はじめてのお客様、アカウントをお持ちでない場合はこちらから
 							</p>
-							<input type="submit" value="ユーザー登録" class="btn">
+							<a href="<?php bloginfo('url'); ?>/register" class="btn">ユーザー登録</a>
 						</div>
 					</section>
 				</div>

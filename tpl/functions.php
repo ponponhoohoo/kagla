@@ -1,5 +1,24 @@
 <?php
 
+function logout_redirect(){
+  wp_safe_redirect( home_url() );
+  exit();
+}
+add_action('wp_logout','logout_redirect');
+
+
+add_filter('template_include','custom_search_template');
+function custom_search_template($template){
+  if ( is_search() ){
+    $post_types = get_query_var('post_type');
+    foreach ( (array) $post_types as $post_type )
+      $templates[] = "{$post_type}-search.php";
+    $templates[] = 'search.php';
+    $template = get_query_template('search',$templates);
+  }
+  return $template;
+}
+
 function my_default_text($text) {
   $current_user = wp_get_current_user();
 
